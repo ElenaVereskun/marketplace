@@ -4,8 +4,7 @@ import loading from "../app/loading.module.css";
 
 export default function Loading() {
   return (
-    <>
-      <h3>Loading</h3>
+    <div className={loading.container}>
       <Image
         className={loading.element}
         src={loader}
@@ -13,6 +12,7 @@ export default function Loading() {
         width={90}
         height={90}
       />
-    </>
+      <h3 className={loading.title}>Запрос обрабатывается!</h3>
+    </div>
   );
 }

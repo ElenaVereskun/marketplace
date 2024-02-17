@@ -1,0 +1,83 @@
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 404px;
+    height: 415px;
+    padding: 40px 48px 40px 48px;
+    border-radius: 16px;
+    /* gap: 16px; */
+    align-items: center;
+    /*  margin-top: 194px; */
+}
+
+.title {
+    font-family: Onest;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 0;
+}
+
+.element {
+    margin: 0;
+    padding-top: 16px;
+    padding-bottom: 7px;
+    font-family: Onest;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #787282;
+
+}
+
+.element:after {
+    color: #e32;
+    content: ' *';
+    display: inline;
+}
+
+.input {
+    width: 393px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #D9DCE9;
+    padding: 0px 0px 0px 11px;
+}
+
+.input::placeholder {
+    font-family: Onest;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+.button {
+    width: 404px;
+    height: 40px;
+    padding: 2px 24px 4px 24px;
+    border-radius: 8px;
+    border: 1px solid #5E5BB2;
+    background-color: #5E5BB2;
+    font-family: Onest;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    color: white;
+    text-align: center;
+    margin-top: 13px;
+    letter-spacing: 0.1em;
+}

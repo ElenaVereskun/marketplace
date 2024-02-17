@@ -1,6 +1,6 @@
 import Image from "next/image";
-import loader from "../images/loader.svg";
-import loading from "../app/loading.module.css";
+import loader from "./src/images/loader.svg";
+import loading from "./loading.module.css";
 
 export default function Loading() {
   return (

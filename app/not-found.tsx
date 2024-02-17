@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ImageNotFound from "../images/not-found.png";
+import ImageNotFound from "./src/images/not-found.png";
 
 export default function NotFound() {
   return (

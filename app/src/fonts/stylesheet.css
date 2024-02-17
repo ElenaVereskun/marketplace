@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'Onest';
+    src: url('Onest-Bold.ttf');
+    src: local('Onest-Bold'), local('Onest-Bold'),
+        url('Onest-Bold.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Onest';
+    src: url('Onest-Regular.ttf');
+    src: local('Onest-Regular'), local('Onest-Regular'),
+        url('Onest-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}

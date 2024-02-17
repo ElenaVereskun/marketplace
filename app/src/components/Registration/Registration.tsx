@@ -7,22 +7,22 @@ import { useForm } from "@/app/src/useForm/useForm";
 //import {notFound} from "next/navigation"
 import styles from './Registration.module.css'
 import { IValues } from "@/app/types";
+import Modal from "@/app/src/components/Modal/Modal"
 
 
 export default function Registration(): React.JSX.Element {
     const [values, setValues] = React.useState<IValues>({
         name: '',
-        surname:'',
-        email:'',
+        surname: '',
+        email: '',
         phone: 0,
     });
     const [errors, setErrors] = React.useState({
         name: '',
-        surname:'',
-        email:'',
+        surname: '',
+        email: '',
         phone: '',
     });
-
 
     const handleChange = (event: { target: any; }) => {
         const target = event.target;
@@ -101,7 +101,9 @@ export default function Registration(): React.JSX.Element {
                     <span className={styles.error}>{errors.phone}</span>
                     <button className={styles.button}>Регистрация</button>
                 </div>
+                <Modal/>
             </form>
+            
         </section>
     );
 }

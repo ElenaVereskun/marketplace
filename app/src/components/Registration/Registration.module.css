@@ -10,12 +10,9 @@
     flex-direction: column;
     background-color: white;
     width: 404px;
-    height: 415px;
     padding: 40px 48px 40px 48px;
     border-radius: 16px;
-    /* gap: 16px; */
     align-items: center;
-    /*  margin-top: 194px; */
 }
 
 .title {
@@ -43,7 +40,7 @@
 }
 
 .element:after {
-    color: #e32;
+    color: #E20000;
     content: ' *';
     display: inline;
 }
@@ -64,7 +61,13 @@
     letter-spacing: 0em;
     text-align: left;
 }
-
+.error{
+    color: #e32;
+    font-family: Onest;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+}
 .button {
     width: 404px;
     height: 40px;
@@ -80,4 +83,5 @@
     text-align: center;
     margin-top: 13px;
     letter-spacing: 0.1em;
+    cursor: pointer;
 }

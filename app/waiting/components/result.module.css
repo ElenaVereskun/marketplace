@@ -36,8 +36,26 @@
     text-align: left;
     background-color: #5E5BB2;
     color: white;
+    cursor: pointer;
 }
+
 .buttonBlock {
     opacity: 0;
     height: 0;
+}
+
+.loader {
+    animation-name: rotate;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
 }

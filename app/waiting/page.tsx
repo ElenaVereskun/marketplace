@@ -3,8 +3,7 @@ import Result from './components/result'
 import { key2 } from './../constants'
 import { key3 } from './../constants'
 
-
-const WaitingModal: React.FC = () => {
+const Waiting: React.FC = () => {
 
     return (
         <div className={styles.container}>
@@ -15,4 +14,4 @@ const WaitingModal: React.FC = () => {
         </div>
     )
 }
-export default WaitingModal
+export default Waiting

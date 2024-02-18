@@ -5,12 +5,17 @@
     left: 0;
     right: 0;
     height: 100vh;
+    opacity: 1;
+    display: flex;
+}
+
+.modalBlock {
+    display: none;
 }
 
 .container {
     background-color: white;
     width: 427px;
-    height: 298px;
     padding: 56px 48px 56px 48px;
     border-radius: 16px;
     display: flex;
@@ -19,12 +24,11 @@
     position: fixed;
     top: 50%;
     transform: translateY(-50%);
-    left: 0;
-    right: 0;
+    left: 25%;
 }
 
 .closeButton {
-    background-image: url(./../src/images/close-button.svg);
+    background-image: url(../../../src//images/close-button.svg);
     width: 16px;
     height: 16px;
     border: none;
@@ -41,7 +45,7 @@
 }
 
 .copyButton {
-    background-image: url(../src/images/copy-button.svg);
+    background-image: url(../../../src/images/copy-button.svg);
     width: 20px;
     height: 20px;
     border: none;
@@ -128,12 +132,11 @@
     font-weight: 600;
     line-height: 18px;
     letter-spacing: 0em;
-    text-align: left;
     color: white;
     background-color: #5E5BB2;
-    width: 334px;
     height: 40px;
     padding: 12px 24px 16px 24px;
     border-radius: 8px;
     border: 1px;
+    cursor: pointer;
 }

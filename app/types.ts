@@ -3,6 +3,8 @@ export interface IValues {
   surname: string
   email: string
   phone: number
+  password:string
+  repeatPassword:string
 }
 
 export interface IProps {
@@ -12,3 +14,10 @@ export interface IProps {
   buttonText: string | null,
   image: HTMLImageElement,
 } 
+
+export interface IModalOpen {
+  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
+  isModalOpen: boolean
+  isHavePassword:boolean
+  buttonText:string
+}

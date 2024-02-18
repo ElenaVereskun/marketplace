@@ -1,27 +1,31 @@
 'use client'
 import React from "react";
-//import {notFound} from "next/navigation"
-import styles from './Registration.module.css'
 import { IValues } from "@/app/types";
-import Modal from "@/app/modal/Modal"
+import styles from './FormRegistration.module.css'
+import { IModalOpen } from "@/app/types";
+import Image from "next/image";
+import OpenEyes from '@/app/src/images/OpenEyes.svg'
+import CloseEyes from '@/app/src/images/CloseEyes.svg'
 
 
-export default function Registration(): React.JSX.Element {
+const FormRegistration: React.FC<IModalOpen> = props => {
+    const { setIsModalOpen, isModalOpen, isHavePassword, buttonText } = props
     const [values, setValues] = React.useState<IValues>({
         name: '',
         surname: '',
         email: '',
         phone: 0,
+        password: '',
+        repeatPassword: ''
     });
     const [errors, setErrors] = React.useState({
         name: '',
         surname: '',
         email: '',
         phone: '',
+        password: '',
+        repeatPassword: ''
     });
-
-    const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
-
     const handleChange = (event: { target: any; }) => {
         const target = event.target;
         const name = target.name;
@@ -33,11 +37,19 @@ export default function Registration(): React.JSX.Element {
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
     }
-    console.log(isModalOpen)
+    function openModal(){        
+        setIsModalOpen(true)
+    }
+    
+    /*  function openEnter() {
+         console.log(openEnter)
+         return document.querySelector(styles.inputPassword)?.setAttribute('type', 'text')
+     } */
 
     return (
-        <div>
-            <form className={styles.form} onSubmit={handleSubmit} >
+
+        <>
+            <form className={styles.form} onSubmit={handleSubmit}  >
                 <div className={styles.container}>
                     <h2 className={styles.title}>Регистрация аккаунта</h2>
                     <div>
@@ -99,13 +111,53 @@ export default function Registration(): React.JSX.Element {
                             required />
                         <span className={styles.error}>{errors.phone}</span>
                     </div>
-                    <button className={styles.button} onClick={() => setIsModalOpen(true)}>Регистрация</button>
+                    {isHavePassword ? (
+                        <div>
+                            <div>
+                                <p className={styles.element}>Пароль</p>
+                                <div className={styles.inputContainer}>
+                                    <input className={styles.inputPassword}
+                                        value={values.password}
+                                        onChange={handleChange}
+                                        type='password'
+                                        rel="to-replace"
+                                        name="password"
+                                        placeholder="Пароль"
+                                        minLength={6}
+                                        maxLength={20}
+                                        required />
+                                    <Image src={CloseEyes} alt="скрыть ввод" />
+                                </div>
+                                <span className={styles.error}>{errors.password}</span>
+                            </div>
+                            <div>
+                                <p className={styles.element}>Повторите пароль</p>
+                                <div className={styles.inputContainer}>
+                                    <input className={styles.inputPassword}
+                                        value={values.repeatPassword}
+                                        onChange={handleChange}
+                                        type='password'
+                                        rel="to-replace"
+                                        name="repeatPassword"
+                                        placeholder="Пароль"
+                                        minLength={6}
+                                        maxLength={20}
+                                        required />
+                                    <Image src={OpenEyes} alt="Показать ввод" />
+                                </div>
+                                <span className={styles.error}>{errors.repeatPassword}</span>
+                            </div>
+                        </div>
+                    ) : (
+                        <div></div>
+                    )
+                    }
+                    <button className={styles.button} onClick={openModal}>{buttonText}</button>
                 </div>
             </form>
-            <Modal title="Запрос отправлен"
-                text="Скопируйте ссылку на страницу ожидания ответа"
-                button="Перейдите на страницу ожидания ответа"
-                setIsModalOpen={setIsModalOpen} />
-        </div>
-    );
+        </>
+    )
 }
+export default FormRegistration
+
+

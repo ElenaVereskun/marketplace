@@ -4,7 +4,8 @@ import ImageNotFound from "./src/images/not-found.png";
 export default function NotFound() {
   return (
     <>
-      <Image src={ImageNotFound} alt="404" width={794} height={794} />
+      <Image src={ImageNotFound} alt="404" width={600} height={600} 
+      style={{paddingTop:'134px'}} />
     </>
   );
 }

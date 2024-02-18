@@ -53,7 +53,20 @@
     border: 1px solid #D9DCE9;
     padding: 0px 0px 0px 11px;
 }
-
+.inputContainer {
+    width: 393px;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #D9DCE9;
+    padding: 0px 11px 0px 11px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.inputPassword{
+    border: none;
+    width: 360px;
+}
 .input::placeholder {
     font-family: Onest;
     font-size: 14px;

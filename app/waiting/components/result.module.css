@@ -1,0 +1,43 @@
+.title {
+    font-family: Onest;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 31px;
+    letter-spacing: 0em;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 24px;
+    padding-top: 24px;
+}
+
+.text {
+    margin: 0;
+    font-family: Onest;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: #373739;
+    padding-bottom: 32px;
+}
+
+.button {
+    width: 107px;
+    height: 40px;
+    padding: 11px 24px 16px 24px;
+    border-radius: 8px;
+    border: 1px;
+    font-family: Onest;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
+    letter-spacing: 0em;
+    text-align: left;
+    background-color: #5E5BB2;
+    color: white;
+}
+.buttonBlock {
+    opacity: 0;
+    height: 0;
+}

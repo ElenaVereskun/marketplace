@@ -1,13 +1,9 @@
 'use client'
 import React from "react";
-import Image from "next/image";
-import { useState } from "react";
-import { useFormWithValidation } from '@/app/src/useForm/useForm'
-import { useForm } from "@/app/src/useForm/useForm";
 //import {notFound} from "next/navigation"
 import styles from './Registration.module.css'
 import { IValues } from "@/app/types";
-import Modal from "@/app/src/components/Modal/Modal"
+import Modal from "@/app/modal/Modal"
 
 
 export default function Registration(): React.JSX.Element {
@@ -24,6 +20,8 @@ export default function Registration(): React.JSX.Element {
         phone: '',
     });
 
+    const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
+
     const handleChange = (event: { target: any; }) => {
         const target = event.target;
         const name = target.name;
@@ -35,9 +33,10 @@ export default function Registration(): React.JSX.Element {
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
     }
+    console.log(isModalOpen)
 
     return (
-        <section className='register'>
+        <div>
             <form className={styles.form} onSubmit={handleSubmit} >
                 <div className={styles.container}>
                     <h2 className={styles.title}>Регистрация аккаунта</h2>
@@ -55,7 +54,6 @@ export default function Registration(): React.JSX.Element {
                             required />
                         <span className={styles.error}>{errors.name}</span>
                     </div>
-
                     <div>
                         <p className={styles.element}>Фамилия</p>
                         <input className={styles.input}
@@ -68,8 +66,9 @@ export default function Registration(): React.JSX.Element {
                             minLength={2}
                             maxLength={30}
                             required />
+                        <span className={styles.error}>{errors.surname}</span>
                     </div>
-                    <span className={styles.error}>{errors.surname}</span>
+
                     <div>
                         <p className={styles.element}>Email</p>
                         <input className={styles.input}
@@ -82,8 +81,9 @@ export default function Registration(): React.JSX.Element {
                             minLength={2}
                             maxLength={30}
                             required />
+                        <span className={styles.error}>{errors.email}</span>
                     </div>
-                    <span className={styles.error}>{errors.email}</span>
+
                     <div>
                         <p className={styles.element}>Телефон</p>
                         <input className={styles.input}
@@ -97,13 +97,15 @@ export default function Registration(): React.JSX.Element {
                             minLength={12}
                             maxLength={12}
                             required />
+                        <span className={styles.error}>{errors.phone}</span>
                     </div>
-                    <span className={styles.error}>{errors.phone}</span>
-                    <button className={styles.button}>Регистрация</button>
+                    <button className={styles.button} onClick={() => setIsModalOpen(true)}>Регистрация</button>
                 </div>
-                <Modal/>
             </form>
-            
-        </section>
+            <Modal title="Запрос отправлен"
+                text="Скопируйте ссылку на страницу ожидания ответа"
+                button="Перейдите на страницу ожидания ответа"
+                setIsModalOpen={setIsModalOpen} />
+        </div>
     );
 }

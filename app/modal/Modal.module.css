@@ -24,7 +24,7 @@
 }
 
 .closeButton {
-    background-image: url(../../images/close-button.svg);
+    background-image: url(./../src/images/close-button.svg);
     width: 16px;
     height: 16px;
     border: none;
@@ -41,7 +41,7 @@
 }
 
 .copyButton {
-    background-image: url(../../images/copy-button.svg);
+    background-image: url(../src/images/copy-button.svg);
     width: 20px;
     height: 20px;
     border: none;

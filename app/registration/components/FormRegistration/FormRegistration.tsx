@@ -1,5 +1,5 @@
 'use client'
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { IValues } from "@/app/types";
 import styles from './FormRegistration.module.css'
 import { IModalOpen } from "@/app/types";
@@ -10,15 +10,15 @@ import CloseEyes from '@/app/src/images/CloseEyes.svg'
 
 const FormRegistration: React.FC<IModalOpen> = props => {
     const { setIsModalOpen, isModalOpen, isHavePassword, buttonText } = props
-    const [values, setValues] = React.useState<IValues>({
+    const [values, setValues] = useState<IValues>({
         name: '',
         surname: '',
         email: '',
-        phone: 0,
+        phone: '',
         password: '',
         repeatPassword: ''
     });
-    const [errors, setErrors] = React.useState({
+    const [errors, setErrors] = useState({
         name: '',
         surname: '',
         email: '',
@@ -37,17 +37,11 @@ const FormRegistration: React.FC<IModalOpen> = props => {
     function handleSubmit(e: { preventDefault: () => void; }) {
         e.preventDefault();
     }
-    function openModal(){        
+    
+    function openModal() {
         setIsModalOpen(true)
     }
-    
-    /*  function openEnter() {
-         console.log(openEnter)
-         return document.querySelector(styles.inputPassword)?.setAttribute('type', 'text')
-     } */
-
     return (
-
         <>
             <form className={styles.form} onSubmit={handleSubmit}  >
                 <div className={styles.container}>
@@ -159,5 +153,3 @@ const FormRegistration: React.FC<IModalOpen> = props => {
     )
 }
 export default FormRegistration
-
-

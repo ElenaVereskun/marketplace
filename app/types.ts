@@ -2,7 +2,7 @@ export interface IValues {
   name: string
   surname: string
   email: string
-  phone: number
+  phone: string
   password:string
   repeatPassword:string
 }

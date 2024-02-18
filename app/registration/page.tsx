@@ -5,7 +5,7 @@ import FormRegistration from "./components/FormRegistration/FormRegistration";
 import { IModalOpen } from '@/app/types'
 
 const Registration: React.FC<IModalOpen> = props => {
-    const {  isHavePassword} = props
+    const {  isHavePassword, buttonText} = props
     const [isModalOpen, setIsModalOpen] = React.useState<boolean>(false);
 
     return (
@@ -13,12 +13,13 @@ const Registration: React.FC<IModalOpen> = props => {
             <FormRegistration setIsModalOpen={setIsModalOpen}
                 isModalOpen={isModalOpen} 
                 isHavePassword={isHavePassword}
-                buttonText='Регистрация' />
+                buttonText="Регистрация" />
             <Modal title="Запрос отправлен"
                 text="Скопируйте ссылку на страницу ожидания ответа"
                 button="Перейдите на страницу ожидания ответа"
                 setIsModalOpen={setIsModalOpen}
-                isModalOpen={isModalOpen} />
+                isModalOpen={isModalOpen}
+                isHavePassword={isHavePassword} />
         </>
     );
 }
